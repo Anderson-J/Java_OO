@@ -3,6 +3,8 @@ package br.com.zoologico.app;
 import br.com.zoologico.classes.Animal;
 import br.com.zoologico.classes.Cachorro;
 import br.com.zoologico.classes.Gato;
+import br.com.zoologico.classes.Veterinario;
+import br.com.zoologico.classes.Zoologico;
 
 public class Programa {
 
@@ -38,6 +40,28 @@ public class Programa {
 		animal.emitirBarulho();
 		gato.emitirBarulho();
 		
-
+		Zoologico zoo = new Zoologico();
+		zoo.setNome("Zoologico do Anderson");
+		
+		Animal animal2 = new Gato("Zé", 3);
+		
+		zoo.adicionarAnimal(animal);
+		zoo.adicionarAnimal(animal2);
+		
+		System.out.println("Animais do zoológico: " + zoo.getNome());
+		zoo.listarAnimais();
+		
+		zoo.removerAnimal(0);
+		
+		System.out.println("Depois da remoção: ");
+		
+		zoo.listarAnimais();
+		
+		Veterinario vet = new Veterinario();
+		vet.setNome("Junior");
+		vet.atenderAnimal(animal);
+		vet.listarAnimaisAtendidos();
+		
+		
 	}
 }
